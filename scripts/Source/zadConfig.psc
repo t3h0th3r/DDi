@@ -357,7 +357,7 @@ Event OnPageReset(string page)
 		breastNodeManagementOID = AddToggleOption("Breast Node Management", breastNodeManagement, flags)
 		AddHeaderOption("Belly Options")
 		int flags = 0
-		if libs.PlayerRef.WornHasKeyword(libs.zad_DeviousCorset)
+		if libs.PlayerRef.WornHasKeyword(libs.zad_DeviousCorset)||libs.PlayerRef.WornHasKeyword(libs.zad_DeviousBelt)
 			flags = OPTION_FLAG_DISABLED
 		EndIf
 		bellyNodeManagementOID = AddToggleOption("Belly Node Management", bellyNodeManagement, flags)
@@ -979,9 +979,9 @@ Event OnOptionHighlight(int option)
 	elseIf (option == ifpOID)
 		SetInfoText("Configures support for Immersive First Person.\nDefault:"+ifpDefault)
 	elseIf (option == breastNodeManagementOID)
-		SetInfoText("If enabled, breasts will be resized while the chastity bra is worn, to minimize HDT clipping.\nDefault: "+breastNodeManagementDefault)
+		SetInfoText("If enabled, breasts will be resized while the chastity bra is worn, to minimized HDT clipping.\nDefault: "+breastNodeManagementDefault)
 	elseIf (option == bellyNodeManagementOID)
-		SetInfoText("If enabled, belly will be resized while a corset, belt or harness is worn, to minimize HDT clipping.\nDefault: "+bellyNodeManagementDefault)
+		SetInfoText("If enabled, belly will be resized while the corset is worn, to minimized HDT clipping.\nDefault: "+bellyNodeManagementDefault)
 	endIf
 EndEvent
 
